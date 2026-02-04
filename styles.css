@@ -9,6 +9,12 @@
     --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -50,7 +56,7 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
 }
 
@@ -81,7 +87,7 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -98,7 +104,7 @@ body {
 
 .hero h1 {
     font-size: 4rem;
-    line-height: 1.1;
+    line-height: 1.2;
     margin-bottom: 1.5rem;
 }
 
@@ -106,6 +112,20 @@ body {
     background: var(--gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradientBG 3s ease infinite;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: var(--primary-color);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .subtitle {
@@ -147,7 +167,7 @@ body {
 
 /* Features */
 .features {
-    padding: 5rem 10%;
+    padding: 4rem 10%;
     background: var(--bg-card);
 }
 
@@ -181,13 +201,13 @@ body {
 
 /* Services */
 .services {
-    padding: 8rem 10%;
+    padding: 6rem 10%;
 }
 
 .section-title {
     font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .service-grid {
@@ -208,7 +228,7 @@ body {
 
 /* Process */
 .process {
-    padding: 8rem 10%;
+    padding: 6rem 10%;
     background: var(--bg-card);
 }
 
@@ -239,7 +259,7 @@ body {
 
 /* Contact */
 .contact {
-    padding: 8rem 10%;
+    padding: 5rem 10%;
     text-align: center;
 }
 
@@ -247,7 +267,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 /* Footer */
